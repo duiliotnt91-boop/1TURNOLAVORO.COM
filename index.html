@@ -1,844 +1,254 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TurnoLavoro – Il lavoro comincia da oggi</title>
-  <style>
-    :root {
-      --brown: #5a3a2e;
-      --brown-dark: #3c261d;
-      --gold: #d4a441;
-      --gold-soft: #f0c96a;
-      --bg-dark: #181818;
-      --text-light: #f8f8f8;
-      --accent: #ff6b5a;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TurnoLavoro – Il lavoro comincia da oggi</title>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
+<style>
     body {
-      background: radial-gradient(circle at top, #3b2720 0, #120c0a 45%, #050505 100%);
-      color: var(--text-light);
-      line-height: 1.5;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #111;
+        color: #fff;
+        line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    h1, h2, h3 {
+        font-weight: 700;
     }
 
-    /* NAVBAR */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(12, 8, 6, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(212, 164, 65, 0.25);
-    }
-
-    .nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.75rem 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .logo-box {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 1.1rem;
-      color: var(--brown-dark);
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      font-weight: 700;
-      font-size: 0.85rem;
-      line-height: 1.1;
-    }
-
-    .logo-text span:first-child {
-      color: var(--gold);
-    }
-
-    .logo-text span:last-child {
-      color: #ffffff;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.2rem;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .nav-links a {
-      padding-bottom: 0.2rem;
-      border-bottom: 2px solid transparent;
-    }
-
-    .nav-links a:hover {
-      border-bottom-color: var(--gold);
-    }
-
-    .nav-cta {
-      padding: 0.45rem 0.9rem;
-      border-radius: 999px;
-      background: var(--accent);
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    /* LAYOUT GENERALE */
-
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1.5rem 1rem 3rem;
-    }
-
-    section {
-      padding: 3rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    }
-
-    section:last-of-type {
-      border-bottom: none;
-    }
-
-    .section-title {
-      font-size: 1.7rem;
-      margin-bottom: 0.4rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .section-sub {
-      font-size: 0.95rem;
-      color: #e4d8d0;
-      max-width: 650px;
-    }
-
-    /* HERO */
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .hero-tag {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--gold-soft);
-      margin-bottom: 0.8rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.1rem, 4vw, 2.7rem);
-      font-weight: 800;
-      text-transform: uppercase;
-      line-height: 1.12;
-      margin-bottom: 0.7rem;
-    }
-
-    .hero h1 span {
-      color: var(--gold);
-    }
-
-    .hero-text {
-      font-size: 0.98rem;
-      color: #f1e4dd;
-      margin-bottom: 1.3rem;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-badges span {
-      font-size: 0.75rem;
-      border-radius: 999px;
-      border: 1px solid rgba(250, 209, 120, 0.5);
-      padding: 0.25rem 0.7rem;
-      color: #fbe4b5;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      align-items: center;
-    }
-
-    .btn-primary {
-      padding: 0.55rem 1.4rem;
-      border-radius: 999px;
-      border: none;
-      background: linear-gradient(135deg, var(--accent), #ff856f);
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.9rem;
-      cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .btn-secondary {
-      padding: 0.5rem 1.2rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      background: transparent;
-      color: #fff;
-      font-size: 0.86rem;
-      cursor: pointer;
-    }
-
-    .hero-note {
-      font-size: 0.75rem;
-      color: #e1d4c9;
-      margin-top: 0.5rem;
-    }
-
-    .hero-card {
-      background: radial-gradient(circle at top, #46302a 0, #1b120f 55%, #0a0605 100%);
-      border-radius: 20px;
-      padding: 1.3rem 1.3rem 1.1rem;
-      border: 1px solid rgba(244, 204, 133, 0.4);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
-    }
-
-    .hero-card-title {
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.13em;
-      color: var(--gold-soft);
-      margin-bottom: 0.7rem;
-    }
-
-    .hero-list {
-      list-style: none;
-      font-size: 0.85rem;
-      color: #f7e9dd;
-      margin-bottom: 1rem;
-    }
-
-    .hero-list li {
-      margin-bottom: 0.35rem;
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .hero-list li::before {
-      content: "✔";
-      color: var(--gold-soft);
-      font-size: 0.8rem;
-    }
-
-    .hero-card-badge {
-      font-size: 0.75rem;
-      color: #ffe7bf;
-    }
-
-    /* GRID CARDS */
-
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1.8rem;
-    }
-
-    .pill-card {
-      background: linear-gradient(145deg, rgba(90, 58, 46, 0.96), #241614);
-      border-radius: 18px;
-      padding: 1rem;
-      border: 1px solid rgba(255, 237, 199, 0.12);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 155px;
-    }
-
-    .pill-card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .pill-card p {
-      font-size: 0.82rem;
-      color: #f4e1d5;
-      margin-bottom: 0.6rem;
-    }
-
-    .pill-tag {
-      font-size: 0.7rem;
-      color: #f8d799;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    /* PIANI */
-
-    .pricing-layout {
-      margin-top: 2rem;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.2rem;
-    }
-
-    .plan-card {
-      border-radius: 18px;
-      padding: 1.1rem 1rem 1.2rem;
-      background: radial-gradient(circle at top, #4a2f26 0, #1a100c 55%, #070504 100%);
-      border: 1px solid rgba(248, 205, 126, 0.35);
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .plan-name {
-      font-size: 1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .plan-sub {
-      font-size: 0.8rem;
-      color: #f0ddce;
-    }
-
-    .plan-price {
-      margin-top: 0.4rem;
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--gold-soft);
-    }
-
-    .plan-price span {
-      font-size: 0.78rem;
-      font-weight: 400;
-      color: #f7dfbd;
-    }
-
-    .plan-details {
-      font-size: 0.8rem;
-      color: #f3dfd1;
-    }
-
-    .plan-btn {
-      margin-top: 0.6rem;
-      align-self: flex-start;
-      padding: 0.45rem 1.2rem;
-      border-radius: 999px;
-      border: none;
-      background: var(--accent);
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 700;
-      cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-    }
-
-    .plan-tagline {
-      font-size: 0.7rem;
-      color: #f9e4c3;
-      margin-top: 0.2rem;
-    }
-
-    .plan-card.muted {
-      opacity: 0.7;
-      border-style: dashed;
-    }
-
-    /* ABOUT + INFO */
-
-    .two-cols {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
-      gap: 1.8rem;
-      margin-top: 1.8rem;
-      align-items: start;
-    }
-
-    .info-box {
-      background: linear-gradient(145deg, #321f19, #1a1110);
-      border-radius: 16px;
-      padding: 1rem 1.1rem;
-      border: 1px solid rgba(255, 227, 191, 0.18);
-      font-size: 0.86rem;
-      color: #f5e4d6;
-    }
-
-    .info-list {
-      list-style: none;
-      margin-top: 0.6rem;
-      font-size: 0.82rem;
-    }
-
-    .info-list li {
-      margin-bottom: 0.3rem;
-    }
-
-    .info-list li::before {
-      content: "• ";
-      color: var(--gold-soft);
-    }
-
-    /* JOB OPPORTUNITIES */
-
-    .job-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.1rem;
-      margin-top: 1.6rem;
-    }
-
-    .job-card {
-      background: linear-gradient(150deg, #3c241d, #1b1010);
-      border-radius: 16px;
-      padding: 0.9rem 1rem;
-      border: 1px solid rgba(255, 219, 164, 0.2);
-      font-size: 0.82rem;
-    }
-
-    .job-card h3 {
-      font-size: 0.95rem;
-      margin-bottom: 0.25rem;
-      color: var(--gold-soft);
-    }
-
-    .job-tag {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #f8dba7;
-      margin-bottom: 0.3rem;
-    }
-
-    /* CONTACT */
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 1.8rem;
-      margin-top: 1.8rem;
-    }
-
-    .contact-form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.7rem;
-      font-size: 0.85rem;
+    .section {
+        padding: 60px 20px;
+        max-width: 1100px;
+        margin: auto;
     }
 
-    .contact-form label {
-      display: block;
-      margin-bottom: 0.2rem;
-      color: #f5e4d7;
+    .title-main {
+        font-size: 42px;
+        color: #ffcc66;
+        text-transform: uppercase;
     }
 
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      background: rgba(0, 0, 0, 0.3);
-      padding: 0.45rem 0.6rem;
-      color: #fff;
-      font-size: 0.85rem;
+    .subtitle {
+        font-size: 22px;
+        color: #ddd;
     }
 
-    .contact-form textarea {
-      min-height: 90px;
-      resize: vertical;
+    .button {
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: #ff6b3d;
+        color: white;
+        border-radius: 8px;
+        margin-top: 15px;
+        font-weight: bold;
+        text-decoration: none;
     }
 
-    .contact-form .full {
-      grid-column: 1 / -1;
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
     }
 
-    .contact-info {
-      font-size: 0.85rem;
-      color: #f1dfcd;
+    .card {
+        background-color: #1c1c1c;
+        border-radius: 12px;
+        padding: 20px;
+        border: 1px solid #333;
     }
 
-    .contact-info p {
-      margin-bottom: 0.5rem;
+    .flag {
+        font-size: 22px;
+        margin-right: 8px;
     }
 
     footer {
-      padding: 1.4rem 1rem 2rem;
-      text-align: center;
-      font-size: 0.78rem;
-      color: #c9b8aa;
-      background: #050303;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      margin-top: 1rem;
+        text-align: center;
+        padding: 30px;
+        color: #aaa;
+        font-size: 14px;
+        margin-top: 40px;
     }
 
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      .hero-card {
-        order: -1;
-        margin-bottom: 1.5rem;
-      }
-      .grid-4,
-      .pricing-layout,
-      .two-cols,
-      .job-grid,
-      .contact-layout {
-        grid-template-columns: 1fr;
-      }
+    input, textarea {
+        width: 100%;
+        padding: 12px;
+        background-color: #222;
+        border: 1px solid #444;
+        color: #fff;
+        margin-bottom: 10px;
+        border-radius: 8px;
     }
+</style>
 
-    @media (max-width: 600px) {
-      .nav-links {
-        display: none;
-      }
-      .nav {
-        justify-content: space-between;
-      }
-      main {
-        padding-inline: 0.75rem;
-      }
-      section {
-        padding: 2.3rem 0;
-      }
-    }
-  </style>
 </head>
 <body>
-  <header>
-    <nav class="nav">
-      <div class="logo-area">
-        <div class="logo-box">T</div>
-        <div class="logo-text">
-          <span>TURNOLAVORO</span>
-          <span>il lavoro comincia da oggi</span>
+
+<!-- ================= HERO ================= -->
+
+<section class="section" style="text-align:center;">
+    <h1 class="title-main">TurnoLavoro</h1>
+    <p class="subtitle">Il lavoro comincia da oggi. Formazione, crescita reale, opportunità vere.</p>
+    <a href="#piani" class="button">ISCRIVITI</a>
+</section>
+
+<!-- =================   COSA OTTIENI ================= -->
+
+<section class="section">
+    <h2>I 4 pilastri di TurnoLavoro</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Lavoro immediato</h3>
+            <p>TurnoLavoro non ti promette risposte: ti inserisce direttamente nel sistema. 
+               Opportunità più rapide e reali.</p>
         </div>
-      </div>
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About us</a>
-        <a href="#training">Training</a>
-        <a href="#jobs">Job</a>
-        <a href="#pricing">Piani</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <a href="#pricing" class="nav-cta">Iscriviti</a>
-    </nav>
-  </header>
 
-  <main>
-    <!-- HERO -->
-    <section id="home">
-      <div class="hero">
-        <div>
-          <div class="hero-tag">Sistema lavoro · Formazione · Crescita reale</div>
-          <h1>
-            TURNO<span>LAVORO</span><br />
-            il lavoro comincia da oggi
-          </h1>
-          <p class="hero-text">
-            Il primo sistema che ti dà <strong>lavoro immediato</strong>, formazione pratica e
-            <strong>crescita reale</strong>. Basta settimane di attesa: con TurnoLavoro inizi da subito un
-            percorso fatto di mini-attività, corsi essenziali e ruoli chiari.
-          </p>
-          <div class="hero-badges">
-            <span>Job immediato</span>
-            <span>Mini-corsi inclusi</span>
-            <span>Paghi poco, cresci tanto</span>
-          </div>
-          <div class="hero-actions">
-            <a href="#pricing" class="btn-primary">Iscriviti adesso</a>
-            <a href="#training" class="btn-secondary">Vedi i programmi di formazione</a>
-          </div>
-          <p class="hero-note">
-            🇬🇧 <em>TurnoLavoro is also available in English. You can start even if you have no experience.</em>
-          </p>
+        <div class="card">
+            <h3>Formazione essenziale</h3>
+            <p>Mini-corsi pratici, veloci, mirati. Impari subito ciò che ti serve davvero.</p>
         </div>
-        <aside class="hero-card">
-          <div class="hero-card-title">Cosa ottieni con TurnoLavoro</div>
-          <ul class="hero-list">
-            <li>Lavoro immediato in attività concrete.</li>
-            <li>Formazione essenziale, breve e pratica.</li>
-            <li>Crescita: da iscritto a Ambassador, Junior Leader, Operator.</li>
-            <li>Guadagni chiari, turni e bonus interni al sistema.</li>
-          </ul>
-          <div class="hero-card-badge">
-            🎯 <strong>Inizio:</strong> il primo mese ti inseriamo in attività semplici, mentre completi i mini-corsi.
-          </div>
-        </aside>
-      </div>
-    </section>
 
-    <!-- PILLARS -->
-    <section>
-      <h2 class="section-title">I 4 pilastri di TurnoLavoro</h2>
-      <p class="section-sub">
-        Tutto il sistema è costruito su quattro pilastri semplici: lavoro, formazione, crescita e guadagni. Nessuna
-        promessa vuota: ogni step è chiaro e misurabile.
-      </p>
-      <div class="grid-4">
-        <div class="pill-card">
-          <h3>Lavoro immediato</h3>
-          <p>Ti inseriamo subito in attività concrete: turni, mini-attività e collaborazioni reali fin dal primo mese.</p>
-          <div class="pill-tag">Immediate job placement</div>
+        <div class="card">
+            <h3>Crescita & Ruoli</h3>
+            <p>Livelli interni: Ambassador, Junior Leader, Operator, Formatori.</p>
         </div>
-        <div class="pill-card">
-          <h3>Formazione essenziale</h3>
-          <p>Mini-corsi brevi, pratici e utili. Niente teoria infinita, solo ciò che ti serve per iniziare SUBITO.</p>
-          <div class="pill-tag">Essential training</div>
+
+        <div class="card">
+            <h3>Guadagni chiari</h3>
+            <p>Compensi semplici, zero promesse vuote. Guadagni veri, non su carta.</p>
         </div>
-        <div class="pill-card">
-          <h3>Crescita & ruoli</h3>
-          <p>Da iscritto a Ambassador, Junior Leader, Team Leader, Operator e Prime Force: ruoli interni, non favole.</p>
-          <div class="pill-tag">Growth & roles</div>
+
+    </div>
+</section>
+
+<!-- ================= ABOUT US ================= -->
+
+<section class="section">
+    <h2>Chi siamo</h2>
+
+    <p>
+        TurnoLavoro è un sistema diretto di formazione, lavoro, crescita reale.  
+        Non è un’agenzia interinale e non è un semplice corso online.  
+        È un circuito interno dove le persone entrano, crescono e ottengono risultati concreti.
+    </p>
+
+    <div class="grid">
+        <div class="card">
+            <span class="flag">🇮🇹</span> Aiuta chi non riceve risposte dai colloqui tradizionali.
         </div>
-        <div class="pill-card">
-          <h3>Guadagni chiari</h3>
-          <p>Quote fisse, piani trasparenti, nessun costo nascosto. Paghi poco ma sai sempre quanto puoi guadagnare.</p>
-          <div class="pill-tag">Clear earnings</div>
+        <div class="card">
+            <span class="flag">🇬🇧</span> Offre struttura, ruoli e crescita interna.
         </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <h2 class="section-title">Chi siamo · About us</h2>
-      <p class="section-sub">
-        TurnoLavoro è un sistema ibrido tra formazione, lavoro e micro-imprenditorialità. Non è un’agenzia interinale e
-        non è un corso online: è un circuito interno dove le persone crescono passo dopo passo.
-      </p>
-      <div class="two-cols">
-        <div class="info-box">
-          <strong>🇮🇹 Cosa fa TurnoLavoro</strong>
-          <ul class="info-list">
-            <li>Aiuta chi non riceve risposte dalle candidature tradizionali.</li>
-            <li>Offre mini-corsi introduttivi e formazione continua.</li>
-            <li>Crea squadre di Ambassador, Junior Leader e Team Leader.</li>
-            <li>Collega le persone a attività reali, non solo promesse.</li>
-          </ul>
+        <div class="card">
+            <span class="flag">🇧🇩</span> Collega formazione e attività reali, non solo promesse.
         </div>
-        <div class="info-box">
-          <strong>🇬🇧 What TurnoLavoro does</strong>
-          <ul class="info-list">
-            <li>Helps people who never get answers from normal job applications.</li>
-            <li>Provides short intro courses and continuous training.</li>
-            <li>Builds internal teams: Ambassador, Junior Leader, Team Leader and more.</li>
-            <li>Connects members to real activities, not just “offers on paper”.</li>
-          </ul>
+    </div>
+</section>
+
+<!-- ================= PROGRAMMI DI FORMAZIONE ================= -->
+
+<section class="section" id="training">
+    <h2>Programmi di formazione</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Mini-corsi essenziali</h3>
+            <p>Per iniziare con basi rapide: sistema Turno, micro-attività, ruoli, tasks.</p>
         </div>
-      </div>
-    </section>
 
-    <!-- TRAINING -->
-    <section id="training">
-      <h2 class="section-title">Programmi di formazione · Training programmes</h2>
-      <p class="section-sub">
-        I nostri percorsi formativi sono pensati per farti iniziare subito. Completa un mini-corso e sblocchi nuovi ruoli,
-        opportunità e crescita reale dentro TurnoLavoro.
-      </p>
-
-      <div class="pricing-layout" style="margin-top:1.5rem;">
-        <article class="plan-card">
-          <div class="plan-name">Mini-corsi essenziali</div>
-          <p class="plan-sub">Per chi entra nel sistema per la prima volta.</p>
-          <p class="plan-details">
-            🇮🇹 Impari le basi di TurnoLavoro, come funzionano i turni, le attività e le regole interne.<br />
-            🇬🇧 Learn the basics: how the system works, shifts, rules and first tasks.
-          </p>
-          <p class="plan-tagline">Durata: 20–40 minuti per modulo</p>
-        </article>
-
-        <article class="plan-card">
-          <div class="plan-name">Percorsi avanzamento</div>
-          <p class="plan-sub">Per chi vuole ruoli interni più stabili.</p>
-          <p class="plan-details">
-            🇮🇹 Percorsi per Ambassador evoluti e Junior Leader, con focus su organizzazione e responsabilità.<br />
-            🇬🇧 Designed for advanced Ambassadors and Junior Leaders, focused on organisation and responsibility.
-          </p>
-          <p class="plan-tagline">Sblocca i ruoli: Junior Leader, Team Leader.</p>
-        </article>
-
-        <article class="plan-card">
-          <div class="plan-name">Formazione ruoli interni</div>
-          <p class="plan-sub">Accesso riservato.</p>
-          <p class="plan-details">
-            🇮🇹 Percorsi dedicati a Operator, Formatori, Prime Force e figure chiave del sistema.<br />
-            🇬🇧 Reserved programmes for Operators, Trainers, Prime Force and core internal roles.
-          </p>
-          <p class="plan-tagline">Disponibile dopo la prima fase di ingresso.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- JOB OPPORTUNITIES -->
-    <section id="jobs">
-      <h2 class="section-title">Opportunità · Job opportunities</h2>
-      <p class="section-sub">
-        TurnoLavoro non promette il “posto fisso in un click”, ma un percorso reale. Le opportunità crescono mentre
-        cresci nel sistema.
-      </p>
-      <div class="job-grid">
-        <article class="job-card">
-          <div class="job-tag">Livello 1</div>
-          <h3>Iscritto & Ambassador</h3>
-          <p>
-            🇮🇹 Inizi con attività semplici, micro-task, supporto di base e prime esperienze in squadra.<br />
-            🇬🇧 You start with simple tasks, micro-activities and first teamwork experiences.
-          </p>
-        </article>
-        <article class="job-card">
-          <div class="job-tag">Livello 2</div>
-          <h3>Junior Leader</h3>
-          <p>
-            🇮🇹 Coordini un piccolo gruppo di Ambassador, supporti l’organizzazione dei turni e la comunicazione.<br />
-            🇬🇧 You coordinate a small group of Ambassadors and help with shifts and communication.
-          </p>
-        </article>
-        <article class="job-card">
-          <div class="job-tag">Livello 3+</div>
-          <h3>Team Leader, Operator, Formatore</h3>
-          <p>
-            🇮🇹 Ruoli più strutturati: gestione squadre, formazione interna, attività complesse e Prime Force.<br />
-            🇬🇧 Structured roles: managing teams, internal training, complex activities and Prime Force.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pricing">
-      <h2 class="section-title">Scegli il tuo piano · Choose your plan</h2>
-      <p class="section-sub">
-        TurnoLavoro parte con un’offerta lancio per i primi 500 iscritti, poi si passa al piano standard. I ruoli più
-        avanzati si sbloccano solo dopo l’ingresso.
-      </p>
-
-      <div class="pricing-layout">
-        <article class="plan-card">
-          <div class="plan-name">Lancio</div>
-          <p class="plan-sub">Tariffa speciale per i primi 500 iscritti.</p>
-          <p class="plan-price">£6.99 <span>al mese</span></p>
-          <p class="plan-details">
-            🇮🇹 Prezzo bloccato per sempre finché resti nel sistema.<br />
-            🇬🇧 Locked price as long as you stay in the system.
-          </p>
-          <p class="plan-details">Accesso a tutti i mini-corsi base e al sistema standard.</p>
-          <button class="plan-btn">Iscriviti ora</button>
-          <p class="plan-tagline">Perfetto per iniziare con il massimo vantaggio.</p>
-        </article>
-
-        <article class="plan-card">
-          <div class="plan-name">Standard</div>
-          <p class="plan-sub">Piano base dopo i primi 500 iscritti.</p>
-          <p class="plan-price">£2.50 <span>a settimana</span></p>
-          <p class="plan-details">
-            🇮🇹 Accesso al sistema base, mini-attività, formazione essenziale.<br />
-            🇬🇧 Access to the base system, micro-jobs and essential training.
-          </p>
-          <button class="plan-btn">Scopri di più</button>
-          <p class="plan-tagline">Il cuore del modello TurnoLavoro.</p>
-        </article>
-
-        <article class="plan-card muted">
-          <div class="plan-name">Business (interno)</div>
-          <p class="plan-sub">Accesso riservato a ruoli interni.</p>
-          <p class="plan-details">
-            🇮🇹 Per Team Leader, Operator, Formatori, Ambassador Pro, Prime Force.<br />
-            🇬🇧 For Team Leaders, Operators, Trainers, Ambassador Pro, Prime Force.
-          </p>
-          <p class="plan-details">Si sblocca solo dopo la prima fase di ingresso.</p>
-          <button class="plan-btn">Riservato</button>
-          <p class="plan-tagline">Non è un piano di vendita, ma un livello interno.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2 class="section-title">Contatti · Contact</h2>
-      <p class="section-sub">
-        Vuoi informazioni su iscrizione, collaborazioni, o portare TurnoLavoro nella tua città? Scrivici e ti
-        risponderemo appena possibile.
-      </p>
-
-      <div class="contact-layout">
-        <form class="contact-form">
-          <div class="full">
-            <label for="name">Nome / Name</label>
-            <input id="name" type="text" placeholder="Il tuo nome" />
-          </div>
-          <div class="full">
-            <label for="email">Email</label>
-            <input id="email" type="email" placeholder="tua-email@example.com" />
-          </div>
-          <div class="full">
-            <label for="msg">Messaggio / Message</label>
-            <textarea id="msg" placeholder="Scrivici cosa stai cercando, ti risponderemo presto."></textarea>
-          </div>
-          <div class="full">
-            <button type="submit" class="plan-btn">Invia richiesta</button>
-          </div>
-        </form>
-
-        <div class="contact-info">
-          <p><strong>Email:</strong> info@turnolavoro.com (esempio)</p>
-          <p><strong>Base operativa:</strong> Italia · Regno Unito</p>
-          <p>
-            🇮🇹 TurnoLavoro nasce per dare una risposta concreta a chi è stanco di inviare CV senza ricevere risposta.<br />
-            🇬🇧 TurnoLavoro was created to give real chances to people tired of sending CVs and hearing nothing back.
-          </p>
+        <div class="card">
+            <h3>Percorsi avanzamento</h3>
+            <p>Per chi vuole ruoli interni: Ambassador → Junior Leader → Operator.</p>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <footer>
-    © 2025 TurnoLavoro · Sistema lavoro, formazione e crescita interna. Tutti i diritti riservati.
-  </footer>
+        <div class="card">
+            <h3>Formazione ruoli interni</h3>
+            <p>Accesso a: Operator, Formatori, Prime Force, ruoli avanzati e attività interne.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= JOB OPPORTUNITIES ================= -->
+
+<section class="section" id="job">
+    <h2>Opportunità interne</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Livello 1 – Iscritto & Ambassador</h3>
+            <p>Impari il sistema, supporti altri, inizi con micro-attività.</p>
+        </div>
+
+        <div class="card">
+            <h3>Livello 2 – Junior Leader</h3>
+            <p>Ti coordini con altri membri, inizi le prime responsabilità.</p>
+        </div>
+
+        <div class="card">
+            <h3>Livello 3 – Operator & Formatore</h3>
+            <p>Gestisci gruppi, formazione interna, attività complesse.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= PIANI ================= -->
+
+<section class="section" id="piani">
+    <h2>Scegli il tuo piano</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Lancio</h3>
+            <p>£6.99/mese</p>
+            <p>Disponibile per i primi 500 iscritti.</p>
+            <a class="button" href="#">ISCRIVITI ORA</a>
+        </div>
+
+        <div class="card">
+            <h3>Standard</h3>
+            <p>£2.50/mese</p>
+            <p>Si sblocca dopo l’ingresso.</p>
+            <a class="button" href="#">SCOPRI DI PIÙ</a>
+        </div>
+
+        <div class="card">
+            <h3>Business (Interno)</h3>
+            <p>Riservato ai ruoli interni.</p>
+            <a class="button" href="#">RISERVATO</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= CONTATTI ================= -->
+
+<section class="section" id="contact">
+    <h2>Contatti</h2>
+
+    <form>
+        <input type="text" placeholder="Nome / Name">
+        <input type="email" placeholder="Email">
+        <textarea rows="5" placeholder="Messaggio / Message"></textarea>
+        <button class="button" type="submit">INVIA RICHIESTA</button>
+    </form>
+
+    <p>Email: info@turnolavoro.com (esempio)</p>
+</section>
+
+<footer>
+    © 2025 TurnoLavoro – Sistema lavoro, formazione e crescita reale.
+</footer>
+
 </body>
 </html>
