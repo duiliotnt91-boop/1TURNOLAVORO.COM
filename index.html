@@ -1,105 +1,263 @@
-body {
-    margin: 0;
-    padding: 0;
-    background: #0c0f15;
-    color: white;
-    font-family: Arial, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>TurnoLavoro – Il lavoro comincia da oggi</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="description"
+      content="TurnoLavoro è il primo sistema che unisce lavoro immediato, formazione pratica e crescita interna con ruoli reali."
+    />
+  </head>
+  <body>
+    <div class="page">
+      <!-- NAVBAR -->
+      <header class="nav">
+        <div class="nav-inner">
+          <div class="brand">
+            <div class="brand-main">
+              <span>TURNOL</span><span>AVORO</span>
+            </div>
+            <div class="brand-tag">
+              Sistema lavoro · Formazione · Crescita reale
+            </div>
+          </div>
 
-/* NAV */
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 30px;
-    background: rgba(0, 0, 0, 0.4);
-    position: sticky;
-    top: 0;
-}
+          <nav class="nav-links">
+            <a href="index.html" class="nav-active">Home</a>
+            <a href="about.html">Chi siamo</a>
+            <a href="training.html">Formazione</a>
+            <a href="job.html">Lavoro</a>
+            <a href="contact.html">Contatti</a>
+          </nav>
 
-.brand {
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
+          <div class="nav-cta">
+            <a href="contact.html">
+              <span class="dot"></span>
+              <span>Iscriviti / Chiedi info</span>
+            </a>
+          </div>
+        </div>
+      </header>
 
-.nav-links a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-}
+      <!-- CONTENUTO PRINCIPALE -->
+      <main class="page-main">
+        <section class="container">
+          <div class="hero-grid">
+            <!-- Colonna sinistra -->
+            <div class="hero-main">
+              <p class="hero-kicker">
+                SISTEMA LAVORO · <span>FORMAZIONE</span> · CRESCITA REALE
+              </p>
 
-.nav-links .active {
-    color: #ffb347;
-}
+              <h1 class="hero-title">
+                <span>IL LAVORO COMINCIA DA OGGI</span>
+                <span><span>Turno</span>Lavoro</span>
+                <span>non è un corso, è un sistema interno.</span>
+              </h1>
 
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-}
+              <p class="hero-text">
+                Entri, compili il modulo una volta sola e inizi un percorso
+                chiaro: mini-corsi essenziali, prime attività interne, ruoli che
+                crescono nel tempo (Ambassador, Junior Leader, Operator,
+                Formatore). Niente attese infinite, niente promesse vuote.
+              </p>
 
-.hero-title {
-    font-size: 48px;
-    font-weight: 900;
-}
+              <div class="hero-actions">
+                <a href="contact.html" class="btn btn-primary">
+                  Iscriviti adesso
+                </a>
+                <a href="about.html" class="btn btn-ghost">
+                  Vedi come funziona
+                </a>
+              </div>
 
-.hero-sub {
-    font-size: 26px;
-    margin-bottom: 20px;
-    color: #ffb347;
-}
+              <p class="hero-highlight">
+                <strong>Primi 500 iscritti:</strong> mantengono il prezzo di
+                lancio e verranno seguiti direttamente nel setup del sistema.
+              </p>
+            </div>
 
-.btn-primary {
-    background: #ff8c00;
-    padding: 14px 24px;
-    border-radius: 8px;
-    display: inline-block;
-    font-weight: 700;
-    text-decoration: none;
-    color: #000;
-}
+            <!-- Colonna destra: card “Cosa ottieni” -->
+            <aside class="cards-grid">
+              <article class="card">
+                <div class="card-label">Cosa succede quando entri</div>
+                <h2 class="card-title">Lavoro immediato, non solo CV</h2>
+                <p class="card-text">
+                  Ti inseriamo in una rete di micro-attività, Ambassador e
+                  primi incarichi interni. Non aspetti “una mail forse”: inizi a
+                  muoverti con task reali.
+                </p>
+                <div class="card-badge">
+                  <span class="dot"></span>
+                  <span>Ingresso guidato da TurnoLavoro</span>
+                </div>
+              </article>
 
-/* CARDS */
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 40px;
-}
+              <article class="card">
+                <div class="card-label">Formazione essenziale</div>
+                <h2 class="card-title">Mini-corsi pratici e mirati</h2>
+                <p class="card-text">
+                  Moduli brevi, mirati a farti capire il sistema, il ruolo che
+                  puoi coprire e come portare risultati velocemente, senza
+                  perdere tempo in teoria inutile.
+                </p>
+              </article>
 
-.card {
-    background: rgba(255, 255, 255, 0.06);
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
-}
+              <article class="card">
+                <div class="card-label">Crescita interna</div>
+                <h2 class="card-title">Ruoli che valgono davvero</h2>
+                <p class="card-text">
+                  Dal semplice iscritto puoi diventare Ambassador, Junior
+                  Leader, Operator e Formatore. Ogni livello porta responsabilità
+                  e opportunità in più.
+                </p>
+              </article>
 
-/* PAGINE */
-.page {
-    padding: 50px 30px;
-}
+              <article class="card">
+                <div class="card-label">Guadagni chiari</div>
+                <h2 class="card-title">Zero promesse vuote</h2>
+                <p class="card-text">
+                  Sai sempre da cosa derivano i tuoi guadagni: attività
+                  interne, ore di lavoro, bonus obiettivi, micro-attività che
+                  il sistema attiva per te.
+                </p>
+              </article>
+            </aside>
+          </div>
 
-/* FORM */
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-}
+          <!-- Sezione: come funziona -->
+          <section class="section">
+            <div class="section-header">
+              <p class="section-kicker">COME FUNZIONA TURNO LAVORO</p>
+              <h2 class="section-title">
+                Un sistema interno, non una semplice agenzia
+              </h2>
+              <p class="section-text">
+                TurnoLavoro unisce tre cose che di solito sono separate:
+                iscrizione, formazione essenziale e inserimento in attività
+                reali. Tutto parte da un unico ingresso.
+              </p>
+            </div>
 
-.form input,
-.form textarea {
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-}
+            <div class="bullets">
+              <div class="bullet">
+                <div class="bullet-icon">1</div>
+                <div>
+                  Compili il modulo e racconti la tua situazione (esperienza,
+                  città, orari, obiettivi).
+                </div>
+              </div>
+              <div class="bullet">
+                <div class="bullet-icon">2</div>
+                <div>
+                  Fai i mini-corsi base per capire il sistema e i primi ruoli
+                  che puoi coprire.
+                </div>
+              </div>
+              <div class="bullet">
+                <div class="bullet-icon">3</div>
+                <div>
+                  Vieni inserito in micro-attività interne, Ambassador team o
+                  prime collaborazioni esterne.
+                </div>
+              </div>
+              <div class="bullet">
+                <div class="bullet-icon">4</div>
+                <div>
+                  Se porti risultati e continuità, sali di livello: Junior
+                  Leader, Operator, Formatore.
+                </div>
+              </div>
+            </div>
+          </section>
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 25px;
-    opacity: 0.5;
-    font-size: 14px;
-}
+          <!-- Sezione: piani -->
+          <section class="section">
+            <div class="section-header">
+              <p class="section-kicker">SCEGLI IL TUO PIANO DI INGRESSO</p>
+              <h2 class="section-title">
+                Piani semplici, ruoli avanzati solo dopo l’ingresso
+              </h2>
+              <p class="section-text">
+                Paghi una volta sola all’ingresso. I ruoli avanzati si sbloccano
+                solo se rimani nel sistema e porti risultati: niente pacchetti
+                “magici”, ma step chiari.
+              </p>
+            </div>
+
+            <div class="plans-grid">
+              <article class="plan">
+                <div class="plan-label">OFFERTA LANCIO · primi 500</div>
+                <h3 class="plan-name">Lancio</h3>
+                <p class="plan-price">£69,99 una tantum</p>
+                <p class="plan-text">
+                  Ingresso nel sistema, mini-corsi base, prime attività
+                  Ambassador / micro-task. Il prezzo rimane bloccato per chi
+                  entra ora.
+                </p>
+              </article>
+
+              <article class="plan">
+                <div class="plan-label">STANDARD</div>
+                <h3 class="plan-name">Ingresso standard</h3>
+                <p class="plan-price">Prezzo aggiornato dopo la fase di lancio</p>
+                <p class="plan-text">
+                  Stesse funzioni del piano “Lancio”, ma con prezzo aggiornato.
+                  Pensato per chi entra quando il sistema è già attivo in
+                  diverse città.
+                </p>
+              </article>
+
+              <article class="plan">
+                <div class="plan-label">RISERVATO</div>
+                <h3 class="plan-name">Business (interno)</h3>
+                <p class="plan-price">Solo su candidatura</p>
+                <p class="plan-text">
+                  Per chi vuole gestire attività TurnoFood, TurnoRetail, Turno
+                  Service e altri progetti interni. Accesso solo dopo aver
+                  dimostrato continuità come membro.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <!-- CTA finale -->
+          <section class="cta">
+            <h2 class="cta-title">
+              Vuoi smettere di inviare CV nel vuoto?
+            </h2>
+            <p class="cta-text">
+              Entra in un sistema dove ogni iscritto ha un percorso chiaro:
+              formazione essenziale, attività reali, crescita interna.
+            </p>
+            <div class="cta-actions">
+              <a href="contact.html" class="btn btn-primary">
+                Inizia da qui
+              </a>
+              <a href="job.html" class="btn btn-ghost">
+                Guarda i ruoli interni
+              </a>
+            </div>
+          </section>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <div>
+            © 2025 TurnoLavoro · Sistema lavoro, formazione e crescita reale.
+          </div>
+          <div class="footer-links">
+            <span>Versione demo 1.0 – sito in sviluppo</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
