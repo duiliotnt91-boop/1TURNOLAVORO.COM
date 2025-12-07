@@ -1,193 +1,112 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contatti – TurnoLavoro</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Contatti – TurnoLavoro</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="description"
+      content="Scrivi a TurnoLavoro per iscrizioni, collaborazioni o domande sul sistema di lavoro e formazione."
+    />
+  </head>
+  <body>
+    <div class="page">
+      <!-- NAV -->
+      <header class="nav">
+        <div class="nav-inner">
+          <div class="brand">
+            <div class="brand-main">
+              <span>TURNOL</span><span>AVORO</span>
+            </div>
+            <div class="brand-tag">
+              Sistema lavoro · Formazione · Crescita reale
+            </div>
+          </div>
 
-<style>
-:root {
-    --gold: #ffb347;
-    --brown: #8b572a;
-    --dark: #111;
-    --bg: #1a1a1a;
-    --text-light: #e6e6e6;
-    --card-bg: #202020;
-}
+          <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">Chi siamo</a>
+            <a href="training.html">Formazione</a>
+            <a href="job.html">Lavoro</a>
+            <a href="contact.html" class="nav-active">Contatti</a>
+          </nav>
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "Segoe UI", sans-serif;
-    background: var(--bg);
-    color: var(--text-light);
-}
+          <div class="nav-cta">
+            <a href="contact.html">
+              <span class="dot"></span>
+              <span>Scrivici adesso</span>
+            </a>
+          </div>
+        </div>
+      </header>
 
-/* NAVBAR */
-.nav {
-    width: 100%;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #0d0d0d;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-}
-.logo {
-    font-size: 26px;
-    font-weight: 800;
-}
-.logo span:first-child { color: var(--gold); }
-.logo span:last-child { color: var(--brown); }
+      <!-- CONTENUTO -->
+      <main class="page-main">
+        <section class="container">
+          <section class="section">
+            <div class="section-header">
+              <p class="section-kicker">CONTATTI</p>
+              <h1 class="section-title">Scrivici per iscrizioni o domande</h1>
+              <p class="section-text">
+                Questa è una versione demo: il form non invia ancora i dati, ma
+                qui trovi il testo di base da usare quando attiveremo il sistema
+                reale di contatto.
+              </p>
+            </div>
 
-.nav a {
-    color: var(--text-light);
-    text-decoration: none;
-    margin-left: 25px;
-    font-weight: 500;
-}
-.nav a:hover,
-.nav .active { color: var(--gold); }
+            <div class="bullets">
+              <div class="bullet">
+                <div class="bullet-icon">1</div>
+                <div>
+                  Indicaci <strong>nome, cognome</strong> e la tua città / zona.
+                </div>
+              </div>
+              <div class="bullet">
+                <div class="bullet-icon">2</div>
+                <div>
+                  Spiega in poche righe la tua situazione lavorativa attuale e
+                  che tipo di percorso cerchi.
+                </div>
+              </div>
+              <div class="bullet">
+                <div class="bullet-icon">3</div>
+                <div>
+                  Specifica se sei interessato a
+                  <strong>Formazione</strong>, <strong>Ruoli interni</strong> o
+                  <strong>Percorso Business</strong>.
+                </div>
+              </div>
+            </div>
 
-/* HEADER */
-.page-header {
-    text-align: center;
-    padding: 80px 20px 20px 20px;
-}
-.page-header h1 {
-    font-size: 42px;
-    margin: 0;
-    font-weight: 800;
-}
-.page-header h1 span { color: var(--gold); }
-.page-header p {
-    max-width: 650px;
-    margin: 18px auto 0 auto;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #ccc;
-}
+            <div class="section" style="margin-top: 40px">
+              <div class="section-header">
+                <p class="section-kicker">EMAIL DI RIFERIMENTO</p>
+                <h2 class="section-title">Indirizzo contatto (esempio)</h2>
+                <p class="section-text">
+                  Quando il sistema sarà attivo, utilizzeremo un indirizzo
+                  dedicato, ad esempio:
+                  <strong>info@turnolavoro.com</strong>. Per ora questa pagina
+                  serve solo come anteprima del sito.
+                </p>
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
 
-/* CONTACT CARD */
-.contact-box {
-    max-width: 480px;
-    margin: 40px auto;
-    background: var(--card-bg);
-    padding: 35px 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.45);
-}
-
-.contact-box label {
-    font-size: 16px;
-    margin-bottom: 6px;
-    display: block;
-    color: var(--gold);
-}
-
-.contact-box input,
-.contact-box textarea {
-    width: 100%;
-    padding: 13px;
-    border-radius: 8px;
-    border: none;
-    margin-bottom: 18px;
-    background: #2a2a2a;
-    color: var(--text-light);
-    font-size: 16px;
-}
-
-.contact-box textarea {
-    resize: none;
-    height: 130px;
-}
-
-.btn-send {
-    width: 100%;
-    background: var(--gold);
-    color: #000;
-    padding: 14px;
-    font-size: 18px;
-    font-weight: 700;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.btn-send:hover {
-    background: #e7a03a;
-}
-
-/* FOOTER */
-.footer {
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-    background: #0d0d0d;
-    color: #777;
-    font-size: 14px;
-}
-</style>
-</head>
-
-<body>
-
-<!-- NAV -->
-<header class="nav">
-    <div class="logo">
-        <span>TURNO</span><span>LAVORO</span>
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <div>© 2025 TurnoLavoro · Sistema lavoro, formazione e crescita reale.</div>
+          <div class="footer-links">
+            <span>Versione demo 1.0 – sito in sviluppo</span>
+          </div>
+        </div>
+      </footer>
     </div>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">Chi Siamo</a>
-        <a href="training.html">Formazione</a>
-        <a href="job.html">Lavoro</a>
-        <a href="contact.html" class="active">Contatti</a>
-    </nav>
-</header>
-
-<!-- HEADER -->
-<section class="page-header">
-    <h1><span>Contattaci</span></h1>
-    <p>
-        Hai domande? Vuoi informazioni sull’ingresso o sul sistema?
-        Compila il modulo qui sotto e ti risponderemo entro 24 ore.
-    </p>
-</section>
-
-<!-- CONTACT FORM -->
-<div class="contact-box">
-
-    <form action="https://formsubmit.co/info@turnolavoro.com" method="POST">
-
-        <!-- Remove captcha -->
-        <input type="hidden" name="_captcha" value="false">
-
-        <!-- Redirect to thank you page -->
-        <input type="hidden" name="_next" value="https://duiliotnt91-boop.github.io/1TURNOLAVORO.COM/success.html">
-
-        <label>Nome e Cognome</label>
-        <input type="text" name="nome" required placeholder="Il tuo nome">
-
-        <label>Email</label>
-        <input type="email" name="email" required placeholder="La tua email">
-
-        <label>Messaggio</label>
-        <textarea name="messaggio" required placeholder="Scrivi qui il tuo messaggio"></textarea>
-
-        <button type="submit" class="btn-send">INVIA</button>
-    </form>
-
-</div>
-
-<!-- FOOTER -->
-<footer class="footer">
-    © 2025 TurnoLavoro – Sistema Lavoro, Formazione e Crescita Reale.
-</footer>
-
-</body>
+  </body>
 </html>
