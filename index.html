@@ -1,60 +1,105 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>TurnoLavoro - Il lavoro comincia da oggi</title>
-<link rel="stylesheet" href="style.css" />
-</head>
+body {
+    margin: 0;
+    padding: 0;
+    background: #0c0f15;
+    color: white;
+    font-family: Arial, sans-serif;
+}
 
-<body>
+/* NAV */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 30px;
+    background: rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+}
 
-<!-- NAV -->
-<header class="nav">
-    <div class="brand">
-        <span style="color:#ffb347;">TURNO</span>LAVORO
-    </div>
+.brand {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
 
-    <nav class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">Chi siamo</a>
-        <a href="training.html">Formazione</a>
-        <a href="job.html">Lavoro</a>
-        <a href="contact.html">Contatti</a>
-    </nav>
-</header>
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
 
-<!-- HERO -->
-<section class="hero">
-    <h1 class="hero-title">TURNO<span style="color:#ffb347;">LAVORO</span></h1>
-    <h2 class="hero-sub">Il lavoro comincia da oggi</h2>
-    <p class="hero-text">
-        Il primo sistema che unisce lavoro immediato, formazione pratica e crescita reale.
-    </p>
-    <a href="contact.html" class="btn-primary">ISCRIVITI</a>
-</section>
+.nav-links .active {
+    color: #ffb347;
+}
 
-<!-- PILASTRI -->
-<section class="cards">
-    <div class="card">
-        <h3>Lavoro immediato</h3>
-        <p>TurnoLavoro ti inserisce subito nel sistema.</p>
-    </div>
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
 
-    <div class="card">
-        <h3>Formazione essenziale</h3>
-        <p>Mini-corsi rapidi e pratici.</p>
-    </div>
+.hero-title {
+    font-size: 48px;
+    font-weight: 900;
+}
 
-    <div class="card">
-        <h3>Crescita & Ruoli</h3>
-        <p>Ambassador → Junior Leader → Operator → Formatore.</p>
-    </div>
-</section>
+.hero-sub {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #ffb347;
+}
 
-<footer>
-    © 2025 TurnoLavoro – Sistema lavoro, formazione e crescita reale.
-</footer>
+.btn-primary {
+    background: #ff8c00;
+    padding: 14px 24px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+}
 
-</body>
-</html>
+/* CARDS */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 40px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+/* PAGINE */
+.page {
+    padding: 50px 30px;
+}
+
+/* FORM */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+}
+
+.form input,
+.form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    opacity: 0.5;
+    font-size: 14px;
+}
