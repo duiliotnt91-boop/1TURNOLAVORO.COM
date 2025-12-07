@@ -2,40 +2,191 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Contatti - TurnoLavoro</title>
-<link rel="stylesheet" href="style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contatti – TurnoLavoro</title>
+
+<style>
+:root {
+    --gold: #ffb347;
+    --brown: #8b572a;
+    --dark: #111;
+    --bg: #1a1a1a;
+    --text-light: #e6e6e6;
+    --card-bg: #202020;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text-light);
+}
+
+/* NAVBAR */
+.nav {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0d0d0d;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+}
+.logo span:first-child { color: var(--gold); }
+.logo span:last-child { color: var(--brown); }
+
+.nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+}
+.nav a:hover,
+.nav .active { color: var(--gold); }
+
+/* HEADER */
+.page-header {
+    text-align: center;
+    padding: 80px 20px 20px 20px;
+}
+.page-header h1 {
+    font-size: 42px;
+    margin: 0;
+    font-weight: 800;
+}
+.page-header h1 span { color: var(--gold); }
+.page-header p {
+    max-width: 650px;
+    margin: 18px auto 0 auto;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* CONTACT CARD */
+.contact-box {
+    max-width: 480px;
+    margin: 40px auto;
+    background: var(--card-bg);
+    padding: 35px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+}
+
+.contact-box label {
+    font-size: 16px;
+    margin-bottom: 6px;
+    display: block;
+    color: var(--gold);
+}
+
+.contact-box input,
+.contact-box textarea {
+    width: 100%;
+    padding: 13px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 18px;
+    background: #2a2a2a;
+    color: var(--text-light);
+    font-size: 16px;
+}
+
+.contact-box textarea {
+    resize: none;
+    height: 130px;
+}
+
+.btn-send {
+    width: 100%;
+    background: var(--gold);
+    color: #000;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-send:hover {
+    background: #e7a03a;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    background: #0d0d0d;
+    color: #777;
+    font-size: 14px;
+}
+</style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <header class="nav">
-    <div class="brand">
-        <span style="color:#ffb347;">TURNO</span>LAVORO
+    <div class="logo">
+        <span>TURNO</span><span>LAVORO</span>
     </div>
 
-    <nav class="nav-links">
+    <nav>
         <a href="index.html">Home</a>
-        <a href="about.html">Chi siamo</a>
+        <a href="about.html">Chi Siamo</a>
         <a href="training.html">Formazione</a>
         <a href="job.html">Lavoro</a>
         <a href="contact.html" class="active">Contatti</a>
     </nav>
 </header>
 
-<section class="page">
-    <h1>Contattaci</h1>
-
-    <form class="form">
-        <input type="text" placeholder="Nome e Cognome" />
-        <input type="email" placeholder="Email" />
-        <textarea placeholder="Messaggio"></textarea>
-        <button class="btn-primary">Invia richiesta</button>
-    </form>
+<!-- HEADER -->
+<section class="page-header">
+    <h1><span>Contattaci</span></h1>
+    <p>
+        Hai domande? Vuoi informazioni sull’ingresso o sul sistema?
+        Compila il modulo qui sotto e ti risponderemo entro 24 ore.
+    </p>
 </section>
 
-<footer>
-    © 2025 TurnoLavoro – Sistema lavoro, formazione e crescita reale.
+<!-- CONTACT FORM -->
+<div class="contact-box">
+
+    <form action="https://formsubmit.co/info@turnolavoro.com" method="POST">
+
+        <!-- Remove captcha -->
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- Redirect to thank you page -->
+        <input type="hidden" name="_next" value="https://duiliotnt91-boop.github.io/1TURNOLAVORO.COM/success.html">
+
+        <label>Nome e Cognome</label>
+        <input type="text" name="nome" required placeholder="Il tuo nome">
+
+        <label>Email</label>
+        <input type="email" name="email" required placeholder="La tua email">
+
+        <label>Messaggio</label>
+        <textarea name="messaggio" required placeholder="Scrivi qui il tuo messaggio"></textarea>
+
+        <button type="submit" class="btn-send">INVIA</button>
+    </form>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    © 2025 TurnoLavoro – Sistema Lavoro, Formazione e Crescita Reale.
 </footer>
 
 </body>
