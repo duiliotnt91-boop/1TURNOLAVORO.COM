@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurnoLavoro – Opportunità</title>
+
+    <style>
+        :root {
+            --bg: #0d0d0d;
+            --bg-card: #171717;
+            --accent: #ff7f0a;
+            --accent-soft: rgba(255, 127, 10, 0.5);
+            --text-main: #ffffff;
+            --text-muted: #bbbbbb;
+            --radius: 12px;
+            --shadow-soft: 0 8px 40px rgba(0,0,0,0.5);
+            --max-width: 1100px;
+            --section-padding: 60px;
+            --font: system-ui, Segoe UI, Arial, sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            margin: 0;
+            padding: 0;
+            color: var(--text-main);
+            font-family: var(--font);
+            line-height: 1.6;
+        }
+
+        nav {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-main);
+            margin: 0 12px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .section {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: var(--section-padding) 20px;
+        }
+
+        h1, h2 {
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .job-card {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: var(--radius);
+            margin: 20px 0;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .job-level {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 12px 20px;
+            background: var(--accent);
+            border-radius: var(--radius);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-soft);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div style="font-weight:800; font-size:1.3rem;">TURNO<span style="color:var(--accent)">LAVORO</span></div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="training.html">Training</a>
+            <a href="job.html">Job</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <section class="section">
+        <h1>Opportunità – Job Opportunities</h1>
+        <p style="color:var(--text-muted);">
+            TurnoLavoro non promette risposte. Ti inserisce direttamente nel sistema.
+            Un percorso reale con ruoli interni che crescono davvero.
+        </p>
+    </section>
+
+    <!-- LEVELS -->
+    <section class="section">
+
+        <div class="job-card">
+            <div class="job-level">Livello 1 – Iscritto & Ambassador</div>
+            <p>
+                🇮🇹 Impari il sistema, supporti altri, fai task con micro-attività.  
+                🇬🇧 Learn the system, help new members, complete micro-activities.
+            </p>
+        </div>
+
+        <div class="job-card">
+            <div class="job-level">Livello 2 – Junior Leader</div>
+            <p>
+                🇮🇹 Coordinamento di un piccolo gruppo di Ambassador.  
+                🇬🇧 Coordination of a small group of Ambassador-level members.
+            </p>
+        </div>
+
+        <div class="job-card">
+            <div class="job-level">Livello 3 – Operator & Formatore</div>
+            <p>
+                🇮🇹 Gestisci gruppi, formazione interna, attività complesse.  
+                🇬🇧 Manage teams, internal training, advanced activities.
+            </p>
+        </div>
+
+        <a href="contact.html" class="btn-primary">Richiedi informazioni</a>
+
+    </section>
+
+</body>
+</html>
 
