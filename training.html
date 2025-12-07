@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - TurnoLavoro</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #222;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ff8b37;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #1c1c1c;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(255, 140, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff8b37;
+        }
+
+        label {
+            font-size: 16px;
+            margin-top: 20px;
+            display: block;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: none;
+            border-radius: 8px;
+            background: #333;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 15px;
+            background-color: #ff8b37;
+            color: #111;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #ffa65a;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">Chi siamo</a>
+        <a href="training.html">Formazione</a>
+        <a href="job.html">Lavoro</a>
+        <a href="contact.html">Contatti</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Contattaci</h1>
+    <p style="text-align:center; color:#ccc;">Compila il modulo e ti risponderemo entro 24 ore.</p>
+
+    <form action="https://formsubmit.co/info@turnolavoro.com" method="POST">
+
+        <!-- Anti-spam -->
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- Redirect dopo invio -->
+        <input type="hidden" name="_next" value="https://1turnolavoro.com/success.html">
+
+        <label>Nome e Cognome</label>
+        <input type="text" name="Nome" required>
+
+        <label>Email</label>
+        <input type="email" name="Email" required>
+
+        <label>Messaggio</label>
+        <textarea name="Messaggio" rows="6" required></textarea>
+
+        <button type="submit">Invia richiesta</button>
+    </form>
+</div>
+
+<footer>
+    © 2025 TurnoLavoro – Opportunità reali, crescita reale.
+</footer>
+
+</body>
+</html>
 
