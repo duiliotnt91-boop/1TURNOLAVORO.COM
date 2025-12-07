@@ -1,234 +1,174 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Opportunità di Lavoro – TurnoLavoro</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Opportunità di lavoro – TurnoLavoro</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="description"
+      content="I ruoli interni di TurnoLavoro: iscritto, Ambassador, Junior Leader, Operator, Formatore e percorsi Business."
+    />
+  </head>
+  <body>
+    <div class="page">
+      <!-- NAV -->
+      <header class="nav">
+        <div class="nav-inner">
+          <div class="brand">
+            <div class="brand-main">
+              <span>TURNOL</span><span>AVORO</span>
+            </div>
+            <div class="brand-tag">
+              Sistema lavoro · Formazione · Crescita reale
+            </div>
+          </div>
 
-<style>
-:root {
-    --gold: #ffb347;
-    --brown: #8b572a;
-    --dark: #111;
-    --bg: #1a1a1a;
-    --text-light: #e6e6e6;
-    --card-bg: #202020;
-}
+          <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">Chi siamo</a>
+            <a href="training.html">Formazione</a>
+            <a href="job.html" class="nav-active">Lavoro</a>
+            <a href="contact.html">Contatti</a>
+          </nav>
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "Segoe UI", sans-serif;
-    background: var(--bg);
-    color: var(--text-light);
-}
+          <div class="nav-cta">
+            <a href="contact.html">
+              <span class="dot"></span>
+              <span>Candidati ai ruoli interni</span>
+            </a>
+          </div>
+        </div>
+      </header>
 
-/* NAVBAR */
-.nav {
-    width: 100%;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #0d0d0d;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-}
-.logo {
-    font-size: 26px;
-    font-weight: 800;
-}
-.logo span:first-child { color: var(--gold); }
-.logo span:last-child { color: var(--brown); }
+      <!-- CONTENUTO -->
+      <main class="page-main">
+        <section class="container">
+          <section class="section">
+            <div class="section-header">
+              <p class="section-kicker">OPPORTUNITÀ INTERNE</p>
+              <h1 class="section-title">I ruoli dentro TurnoLavoro</h1>
+              <p class="section-text">
+                Ogni ruolo nasce da attività reali. Nessun titolo finto: per
+                salire di livello servono risultati, presenza e continuità.
+              </p>
+            </div>
 
-.nav a {
-    color: var(--text-light);
-    text-decoration: none;
-    margin-left: 25px;
-    font-weight: 500;
-}
-.nav a:hover,
-.nav .active { color: var(--gold); }
+            <div class="cards-grid">
+              <article class="card">
+                <div class="card-label">LIVELLO 1</div>
+                <h2 class="card-title">Iscritto & Ambassador</h2>
+                <p class="card-text">
+                  Ingresso nel sistema, mini-corsi base, prime attività di
+                  supporto e Ambassador, micro-task e collaborazione alla
+                  crescita della community.
+                </p>
+              </article>
 
-/* HEADER */
-.page-header {
-    text-align: center;
-    padding: 80px 20px 40px 20px;
-}
-.page-header h1 {
-    font-size: 42px;
-    margin: 0;
-    font-weight: 800;
-}
-.page-header h1 span { color: var(--gold); }
-.page-header p {
-    max-width: 700px;
-    margin: 20px auto 0 auto;
-    font-size: 18px;
-    line-height: 1.6;
-}
+              <article class="card">
+                <div class="card-label">LIVELLO 2</div>
+                <h2 class="card-title">Junior Leader</h2>
+                <p class="card-text">
+                  Coordinamento di piccoli gruppi di iscritti, supporto
+                  comunicazione, gestione di semplici report e attività interne
+                  in affiancamento.
+                </p>
+              </article>
 
-/* SECTION TITLES */
-.section-title {
-    font-size: 32px;
-    text-align: center;
-    margin-top: 80px;
-    margin-bottom: 20px;
-    color: var(--gold);
-    font-weight: 700;
-}
+              <article class="card">
+                <div class="card-label">LIVELLO 3</div>
+                <h2 class="card-title">Operator & Formatore</h2>
+                <p class="card-text">
+                  Ruoli operativi nelle attività interne (TurnoFood, servizi,
+                  eventi, retail) e affiancamento nuovi iscritti nella parte
+                  pratica e nei mini-corsi.
+                </p>
+              </article>
 
-/* CONTENT */
-.section {
-    max-width: 900px;
-    margin: auto;
-    padding: 0 20px 20px 20px;
-    line-height: 1.8;
-    font-size: 18px;
-}
+              <article class="card">
+                <div class="card-label">PERCORSO BUSINESS</div>
+                <h2 class="card-title">Responsabili di attività</h2>
+                <p class="card-text">
+                  Percorso dedicato a chi vuole gestire un punto TurnoLavoro o
+                  una delle attività interne (food, servizi, sport, media…).
+                  Accesso solo dopo aver dimostrato continuità nei ruoli
+                  precedenti.
+                </p>
+              </article>
+            </div>
+          </section>
 
-/* CARDS */
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 40px 20px;
-    flex-wrap: wrap;
-}
-.card {
-    background: var(--card-bg);
-    padding: 30px;
-    width: 280px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    transition: 0.3s;
-}
-.card:hover { transform: translateY(-5px); }
-.card h3 {
-    color: var(--gold);
-    margin-bottom: 10px;
-    font-size: 20px;
-}
-.card p {
-    color: var(--text-light);
-    font-size: 15px;
-}
+          <section class="section">
+            <div class="section-header">
+              <p class="section-kicker">COME SI CRESCE</p>
+              <h2 class="section-title">Dal primo ingresso ai ruoli avanzati</h2>
+              <p class="section-text">
+                Nessuno parte da “manager”. Tutti entrano come iscritti; poi,
+                in base a presenze, risultati e affidabilità, il sistema propone
+                i passaggi di livello.
+              </p>
+            </div>
 
-/* FOOTER */
-.footer {
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-    background: #0d0d0d;
-    color: #777;
-    font-size: 14px;
-}
-</style>
-</head>
+            <div class="bullets">
+              <div class="bullet">
+                <div class="bullet-icon">▲</div>
+                <div>
+                  Ogni avanzamento è legato a obiettivi chiari: ore svolte,
+                  attività concluse, feedback ricevuti.
+                </div>
+              </div>
+              <div class="bullet">
+                <div class="bullet-icon">£</div>
+                <div>
+                  Più alto è il livello, più responsabilità e potenziale di
+                  guadagno: ma sempre con regole scritte e trasparenti.
+                </div>
+              </div>
+              <div class="bullet">
+                <div class="bullet-icon">⚙</div>
+                <div>
+                  I ruoli Business richiedono stabilità, capacità di gestione
+                  persone e disponibilità a lungo termine.
+                </div>
+              </div>
+              <div class="bullet">
+                <div class="bullet-icon">✉</div>
+                <div>
+                  Puoi candidarti specificando il livello che ti interessa
+                  direttamente dalla pagina <strong>Contatti</strong>.
+                </div>
+              </div>
+            </div>
+          </section>
 
-<body>
+          <section class="cta">
+            <h2 class="cta-title">Vuoi proporti per un ruolo preciso?</h2>
+            <p class="cta-text">
+              Scrivici dalla pagina Contatti indicando il livello che ti interessa
+              (Ambassador, Junior Leader, Operator, Formatore, Business) e la tua
+              città.
+            </p>
+            <div class="cta-actions">
+              <a href="contact.html" class="btn btn-primary">
+                Candidati ora
+              </a>
+            </div>
+          </section>
+        </section>
+      </main>
 
-<!-- NAV -->
-<header class="nav">
-    <div class="logo">
-        <span>TURNO</span><span>LAVORO</span>
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <div>© 2025 TurnoLavoro · Sistema lavoro, formazione e crescita reale.</div>
+          <div class="footer-links">
+            <span>Versione demo 1.0 – sito in sviluppo</span>
+          </div>
+        </div>
+      </footer>
     </div>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">Chi Siamo</a>
-        <a href="training.html">Formazione</a>
-        <a href="job.html" class="active">Lavoro</a>
-        <a href="contact.html">Contatti</a>
-    </nav>
-</header>
-
-<!-- HEADER -->
-<section class="page-header">
-    <h1>Opportunità di <span>Lavoro</span></h1>
-    <p>
-        TurnoLavoro non promette “CV inviati e attese infinite”.
-        Qui si entra, si cresce e si lavora davvero.  
-        Le posizioni interne sono reali e disponibili per tutti quelli che completano correttamente i livelli.
-    </p>
-</section>
-
-<!-- RUOLI DISPONIBILI -->
-<h2 class="section-title">Ruoli Disponibili nel Sistema</h2>
-<section class="cards">
-
-    <div class="card">
-        <h3>Iscritto & Ambassador</h3>
-        <p>
-            Il punto di ingresso nel sistema.  
-            Guadagni i primi punti con micro–attività, contenuti e supporto
-            alla rete. È il ruolo base da cui tutto parte.
-        </p>
-    </div>
-
-    <div class="card">
-        <h3>Junior Leader</h3>
-        <p>
-            Supporto ai nuovi iscritti, gestione dei primi task,
-            prime responsabilità interne.  
-            Accesso diretto ai percorsi di avanzamento.
-        </p>
-    </div>
-
-    <div class="card">
-        <h3>Operator</h3>
-        <p>
-            Ruolo operativo interno.  
-            Gestione attività, micro–task avanzati, comunicazione con i membri,
-            partecipazione allo sviluppo dei TurnoPoint.
-        </p>
-    </div>
-
-    <div class="card">
-        <h3>Team Leader</h3>
-        <p>
-            Coordinamento gruppo, gestione processi,
-            affiancamento ai formatori e partecipazione alla crescita territoriale.
-        </p>
-    </div>
-
-    <div class="card">
-        <h3>Formatore</h3>
-        <p>
-            Ruolo specializzato nella formazione interna.  
-            Guida degli iscritti, preparazione ai livelli superiori,
-            supporto continuo all’intera rete.
-        </p>
-    </div>
-
-</section>
-
-<!-- DESCRIZIONE GENERALE -->
-<h2 class="section-title">Come Funziona l’Ingresso ai Ruoli</h2>
-<section class="section">
-    <p>
-        I ruoli non si “richiedono”: si conquistano.  
-        Ogni ruolo viene assegnato automaticamente in base ai punti interni,
-        ai task completati e alla partecipazione alle attività TurnoLavoro.
-    </p>
-
-    <p>
-        Non serve esperienza lavorativa pregressa:  
-        <strong>il sistema ti forma mentre entri</strong>.
-    </p>
-
-    <p>
-        Il percorso è pratico, veloce e meritocratico.
-        Chi si muove, avanza. Chi avanza, ottiene opportunità reali.
-    </p>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-    © 2025 TurnoLavoro – Sistema Lavoro, Formazione e Crescita Reale.
-</footer>
-
-</body>
+  </body>
 </html>
