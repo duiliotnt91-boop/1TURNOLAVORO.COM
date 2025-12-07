@@ -2,43 +2,225 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Formazione - TurnoLavoro</title>
-<link rel="stylesheet" href="style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chi siamo – TurnoLavoro</title>
+
+<style>
+:root {
+    --gold: #ffb347;
+    --brown: #8b572a;
+    --dark: #111;
+    --bg: #1a1a1a;
+    --text-light: #e6e6e6;
+    --card-bg: #202020;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text-light);
+}
+
+/* NAVBAR */
+.nav {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0d0d0d;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+}
+.logo span:first-child { color: var(--gold); }
+.logo span:last-child { color: var(--brown); }
+
+.nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+}
+.nav a:hover,
+.nav .active { color: var(--gold); }
+
+/* PAGE HEADER */
+.page-header {
+    text-align: center;
+    padding: 80px 20px 40px 20px;
+}
+.page-header h1 {
+    font-size: 42px;
+    margin: 0;
+    font-weight: 800;
+}
+.page-header h1 span { color: var(--gold); }
+.page-header p {
+    max-width: 700px;
+    margin: 20px auto 0 auto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* SECTION TITLES */
+.section-title {
+    font-size: 32px;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    color: var(--gold);
+    font-weight: 700;
+}
+
+/* SECTIONS */
+.section {
+    max-width: 900px;
+    margin: auto;
+    padding: 0 20px 20px 20px;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    width: 280px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+.card:hover { transform: translateY(-5px); }
+.card h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+.card p {
+    color: var(--text-light);
+}
+
+/* LIST POINTS */
+.values-list li {
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    background: #0d0d0d;
+    color: #777;
+    font-size: 14px;
+}
+</style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <header class="nav">
-    <div class="brand">
-        <span style="color:#ffb347;">TURNO</span>LAVORO
+    <div class="logo">
+        <span>TURNO</span><span>LAVORO</span>
     </div>
 
-    <nav class="nav-links">
+    <nav>
         <a href="index.html">Home</a>
-        <a href="about.html">Chi siamo</a>
-        <a href="training.html" class="active">Formazione</a>
+        <a href="about.html" class="active">Chi Siamo</a>
+        <a href="training.html">Formazione</a>
         <a href="job.html">Lavoro</a>
         <a href="contact.html">Contatti</a>
     </nav>
 </header>
 
-<section class="page">
-    <h1>Formazione</h1>
-    <p>I mini-corsi essenziali disponibili dopo l’ingresso nel sistema TurnoLavoro.</p>
+<!-- PAGE HEADER -->
+<section class="page-header">
+    <h1>Chi è <span>TurnoLavoro</span></h1>
+    <p>
+        TurnoLavoro è un sistema innovativo che unisce lavoro reale,
+        formazione pratica e crescita interna.  
+        Non siamo un’agenzia: siamo un ecosistema pensato per far salire
+        le persone passo dopo passo, senza attese e senza complicazioni.
+    </p>
+</section>
 
-    <ul class="list">
-        <li>Basi del sistema</li>
-        <li>Junior Leader</li>
-        <li>Operator</li>
-        <li>Formatore</li>
+<!-- MISSIONE -->
+<h2 class="section-title">Missione</h2>
+<section class="section">
+    La nostra missione è semplice: creare opportunità concrete e immediate.
+    Vogliamo eliminare l’attesa infinita delle candidature tradizionali e sostituirla
+    con un sistema che inserisce le persone subito, formandole e facendole crescere
+    con i loro tempi e capacità.
+</section>
+
+<!-- VISIONE -->
+<h2 class="section-title">Visione</h2>
+<section class="section">
+    Costruire la più grande rete autonoma di lavoro, formazione e crescita reale,
+    con decine di attività interne (TurnoFood, TurnoRetail, TurnoService, TurnoMedia,
+    TurnoSport…) gestite direttamente dai membri che hanno iniziato dal basso.
+</section>
+
+<!-- VALORI -->
+<h2 class="section-title">I nostri valori</h2>
+<section class="section">
+    <ul class="values-list">
+        <li>🔶 Crescita vera, graduale e meritocratica.</li>
+        <li>🔶 Formazione semplice, veloce e utile.</li>
+        <li>🔶 Opportunità accessibili a tutti, nessuno escluso.</li>
+        <li>🔶 Nessuna attesa inutile: si parte subito.</li>
+        <li>🔶 Ogni persona può arrivare a ruoli di responsabilità.</li>
     </ul>
 </section>
 
-<footer>
-    © 2025 TurnoLavoro – Sistema lavoro, formazione e crescita reale.
+<!-- CARDS -->
+<h2 class="section-title">Cosa ti offre TurnoLavoro</h2>
+<section class="cards">
+
+    <div class="card">
+        <h3>Lavoro reale</h3>
+        <p>Inserimento immediato nelle opportunità interne e nei progetti in crescita.</p>
+    </div>
+
+    <div class="card">
+        <h3>Formazione pratica</h3>
+        <p>Mini-corsi essenziali che impari subito e applichi immediatamente.</p>
+    </div>
+
+    <div class="card">
+        <h3>Crescita interna</h3>
+        <p>Ruoli chiari: Iscritto → Ambassador → Junior Leader → Operator → Formatore.</p>
+    </div>
+
+</section>
+
+<!-- PERCHÉ NOI -->
+<h2 class="section-title">Perché scegliere TurnoLavoro</h2>
+<section class="section">
+    TurnoLavoro non è un servizio esterno: è una rete che cresce insieme ai suoi membri.
+    Ogni persona che entra diventa parte del sistema, contribuisce alla crescita e può
+    accedere a ruoli, attività interne, formazioni avanzate e nuove opportunità reali.
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    © 2025 TurnoLavoro – Sistema Lavoro, Formazione e Crescita Reale.
 </footer>
 
 </body>
 </html>
-
