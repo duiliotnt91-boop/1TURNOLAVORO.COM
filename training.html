@@ -1,226 +1,172 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Chi siamo – TurnoLavoro</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Formazione – TurnoLavoro</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="description"
+      content="I mini-corsi essenziali e i percorsi di crescita interna di TurnoLavoro: dal sistema base ai ruoli di responsabilità."
+    />
+  </head>
+  <body>
+    <div class="page">
+      <!-- NAV -->
+      <header class="nav">
+        <div class="nav-inner">
+          <div class="brand">
+            <div class="brand-main">
+              <span>TURNOL</span><span>AVORO</span>
+            </div>
+            <div class="brand-tag">
+              Sistema lavoro · Formazione · Crescita reale
+            </div>
+          </div>
 
-<style>
-:root {
-    --gold: #ffb347;
-    --brown: #8b572a;
-    --dark: #111;
-    --bg: #1a1a1a;
-    --text-light: #e6e6e6;
-    --card-bg: #202020;
-}
+          <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">Chi siamo</a>
+            <a href="training.html" class="nav-active">Formazione</a>
+            <a href="job.html">Lavoro</a>
+            <a href="contact.html">Contatti</a>
+          </nav>
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "Segoe UI", sans-serif;
-    background: var(--bg);
-    color: var(--text-light);
-}
+          <div class="nav-cta">
+            <a href="contact.html">
+              <span class="dot"></span>
+              <span>Iscriviti ai mini-corsi</span>
+            </a>
+          </div>
+        </div>
+      </header>
 
-/* NAVBAR */
-.nav {
-    width: 100%;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #0d0d0d;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-}
-.logo {
-    font-size: 26px;
-    font-weight: 800;
-}
-.logo span:first-child { color: var(--gold); }
-.logo span:last-child { color: var(--brown); }
+      <!-- CONTENUTO -->
+      <main class="page-main">
+        <section class="container">
+          <section class="section">
+            <div class="section-header">
+              <p class="section-kicker">FORMAZIONE ESSENZIALE</p>
+              <h1 class="section-title">Mini-corsi pensati per iniziare subito</h1>
+              <p class="section-text">
+                I percorsi di TurnoLavoro sono brevi, pratici e mirati. Servono
+                per farti capire il sistema, il ruolo che puoi coprire e come
+                portare risultati concreti nelle attività interne.
+              </p>
+            </div>
 
-.nav a {
-    color: var(--text-light);
-    text-decoration: none;
-    margin-left: 25px;
-    font-weight: 500;
-}
-.nav a:hover,
-.nav .active { color: var(--gold); }
+            <div class="cards-grid">
+              <article class="card">
+                <div class="card-label">MODULO 1</div>
+                <h2 class="card-title">Base del sistema TurnoLavoro</h2>
+                <p class="card-text">
+                  Come funziona il sistema, quali sono i livelli interni,
+                  differenza tra attività interne e collaborazioni esterne,
+                  regole di base e aspettative.
+                </p>
+              </article>
 
-/* PAGE HEADER */
-.page-header {
-    text-align: center;
-    padding: 80px 20px 40px 20px;
-}
-.page-header h1 {
-    font-size: 42px;
-    margin: 0;
-    font-weight: 800;
-}
-.page-header h1 span { color: var(--gold); }
-.page-header p {
-    max-width: 700px;
-    margin: 20px auto 0 auto;
-    font-size: 18px;
-    line-height: 1.6;
-}
+              <article class="card">
+                <div class="card-label">MODULO 2</div>
+                <h2 class="card-title">Modulo Ambassador</h2>
+                <p class="card-text">
+                  Come presentare TurnoLavoro, come usare i materiali ufficiali,
+                  come gestire contatti e richieste di informazioni senza
+                  improvvisare.
+                </p>
+              </article>
 
-/* SECTION TITLES */
-.section-title {
-    font-size: 32px;
-    text-align: center;
-    margin-top: 80px;
-    margin-bottom: 20px;
-    color: var(--gold);
-    font-weight: 700;
-}
+              <article class="card">
+                <div class="card-label">MODULO 3</div>
+                <h2 class="card-title">Modulo Junior Leader</h2>
+                <p class="card-text">
+                  Per chi inizia a seguire piccoli gruppi di iscritti: gestione
+                  turni, comunicazione, report base, obiettivi settimanali.
+                </p>
+              </article>
 
-/* SECTIONS */
-.section {
-    max-width: 900px;
-    margin: auto;
-    padding: 0 20px 20px 20px;
-    line-height: 1.8;
-    font-size: 18px;
-}
+              <article class="card">
+                <div class="card-label">MODULO 4</div>
+                <h2 class="card-title">Modulo Operator & Formatore</h2>
+                <p class="card-text">
+                  Per ruoli più avanzati: gestione di attività interne
+                  (TurnoFood, TurnoRetail, servizi), affiancamento nuovi iscritti
+                  e formazione pratica sul campo.
+                </p>
+              </article>
+            </div>
+          </section>
 
-/* CARDS */
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 40px 20px;
-    flex-wrap: wrap;
-}
-.card {
-    background: var(--card-bg);
-    padding: 30px;
-    width: 280px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    transition: 0.3s;
-}
-.card:hover { transform: translateY(-5px); }
-.card h3 {
-    color: var(--gold);
-    margin-bottom: 10px;
-}
-.card p {
-    color: var(--text-light);
-}
+          <section class="section">
+            <div class="section-header">
+              <p class="section-kicker">COME SI SVOLGONO</p>
+              <h2 class="section-title">Formazione online + pratica reale</h2>
+              <p class="section-text">
+                Non ti riempiamo di teoria: il focus è capire cosa devi fare
+                nelle attività reali e come funzionano paghe, tempi e
+                responsabilità.
+              </p>
+            </div>
 
-/* LIST POINTS */
-.values-list li {
-    margin-bottom: 10px;
-}
+            <div class="bullets">
+              <div class="bullet">
+                <div class="bullet-icon">▶</div>
+                <div>
+                  Lezioni brevi online (video o slide) per spiegare le basi in
+                  modo chiaro.
+                </div>
+              </div>
+              <div class="bullet">
+                <div class="bullet-icon">✓</div>
+                <div>
+                  Piccoli task da fare subito dopo il modulo, per mettere in
+                  pratica quello che hai appena imparato.
+                </div>
+              </div>
+              <div class="bullet">
+                <div class="bullet-icon">★</div>
+                <div>
+                  Feedback da parte di un referente interno, per capire se sei
+                  pronto a salire di livello o proseguire sul ruolo attuale.
+                </div>
+              </div>
+              <div class="bullet">
+                <div class="bullet-icon">∞</div>
+                <div>
+                  Accesso continuo ai materiali aggiornati del sistema, senza
+                  dover ripagare corsi ogni volta.
+                </div>
+              </div>
+            </div>
+          </section>
 
-/* FOOTER */
-.footer {
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-    background: #0d0d0d;
-    color: #777;
-    font-size: 14px;
-}
-</style>
-</head>
+          <section class="cta">
+            <h2 class="cta-title">Vuoi iniziare dai mini-corsi base?</h2>
+            <p class="cta-text">
+              Compila il modulo dalla pagina Contatti, specificando che vuoi
+              partire dalla <strong>Formazione essenziale</strong>.
+            </p>
+            <div class="cta-actions">
+              <a href="contact.html" class="btn btn-primary">
+                Chiedi info sulla formazione
+              </a>
+            </div>
+          </section>
+        </section>
+      </main>
 
-<body>
-
-<!-- NAV -->
-<header class="nav">
-    <div class="logo">
-        <span>TURNO</span><span>LAVORO</span>
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <div>© 2025 TurnoLavoro · Sistema lavoro, formazione e crescita reale.</div>
+          <div class="footer-links">
+            <span>Versione demo 1.0 – sito in sviluppo</span>
+          </div>
+        </div>
+      </footer>
     </div>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">Chi Siamo</a>
-        <a href="training.html">Formazione</a>
-        <a href="job.html">Lavoro</a>
-        <a href="contact.html">Contatti</a>
-    </nav>
-</header>
-
-<!-- PAGE HEADER -->
-<section class="page-header">
-    <h1>Chi è <span>TurnoLavoro</span></h1>
-    <p>
-        TurnoLavoro è un sistema innovativo che unisce lavoro reale,
-        formazione pratica e crescita interna.  
-        Non siamo un’agenzia: siamo un ecosistema pensato per far salire
-        le persone passo dopo passo, senza attese e senza complicazioni.
-    </p>
-</section>
-
-<!-- MISSIONE -->
-<h2 class="section-title">Missione</h2>
-<section class="section">
-    La nostra missione è semplice: creare opportunità concrete e immediate.
-    Vogliamo eliminare l’attesa infinita delle candidature tradizionali e sostituirla
-    con un sistema che inserisce le persone subito, formandole e facendole crescere
-    con i loro tempi e capacità.
-</section>
-
-<!-- VISIONE -->
-<h2 class="section-title">Visione</h2>
-<section class="section">
-    Costruire la più grande rete autonoma di lavoro, formazione e crescita reale,
-    con decine di attività interne (TurnoFood, TurnoRetail, TurnoService, TurnoMedia,
-    TurnoSport…) gestite direttamente dai membri che hanno iniziato dal basso.
-</section>
-
-<!-- VALORI -->
-<h2 class="section-title">I nostri valori</h2>
-<section class="section">
-    <ul class="values-list">
-        <li>🔶 Crescita vera, graduale e meritocratica.</li>
-        <li>🔶 Formazione semplice, veloce e utile.</li>
-        <li>🔶 Opportunità accessibili a tutti, nessuno escluso.</li>
-        <li>🔶 Nessuna attesa inutile: si parte subito.</li>
-        <li>🔶 Ogni persona può arrivare a ruoli di responsabilità.</li>
-    </ul>
-</section>
-
-<!-- CARDS -->
-<h2 class="section-title">Cosa ti offre TurnoLavoro</h2>
-<section class="cards">
-
-    <div class="card">
-        <h3>Lavoro reale</h3>
-        <p>Inserimento immediato nelle opportunità interne e nei progetti in crescita.</p>
-    </div>
-
-    <div class="card">
-        <h3>Formazione pratica</h3>
-        <p>Mini-corsi essenziali che impari subito e applichi immediatamente.</p>
-    </div>
-
-    <div class="card">
-        <h3>Crescita interna</h3>
-        <p>Ruoli chiari: Iscritto → Ambassador → Junior Leader → Operator → Formatore.</p>
-    </div>
-
-</section>
-
-<!-- PERCHÉ NOI -->
-<h2 class="section-title">Perché scegliere TurnoLavoro</h2>
-<section class="section">
-    TurnoLavoro non è un servizio esterno: è una rete che cresce insieme ai suoi membri.
-    Ogni persona che entra diventa parte del sistema, contribuisce alla crescita e può
-    accedere a ruoli, attività interne, formazioni avanzate e nuove opportunità reali.
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-    © 2025 TurnoLavoro – Sistema Lavoro, Formazione e Crescita Reale.
-</footer>
-
-</body>
+  </body>
 </html>
