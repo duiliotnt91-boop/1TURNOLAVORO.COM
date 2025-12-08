@@ -26,7 +26,54 @@
 html,
 body {
   height: 100%;
+}/* ====== CONTATTI / FORM ====== */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 22px;
+  margin-top: 24px;
 }
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.form-field label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+  background: #14161c;
+  border-radius: 10px;
+  border: 1px solid var(--border-soft);
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #6f7480;
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+@media (max-width: 850px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
