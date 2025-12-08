@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css" />
     <meta
       name="description"
-      content="Scrivi a TurnoLavoro per iscrizioni, collaborazioni o domande sul sistema di lavoro e formazione."
+      content="Scrivi a TurnoLavoro per iscriverti o chiedere informazioni sul sistema di lavoro, formazione e crescita interna."
     />
   </head>
   <body>
@@ -50,48 +50,113 @@
           <section class="section">
             <div class="section-header">
               <p class="section-kicker">CONTATTI</p>
-              <h1 class="section-title">Scrivici per iscrizioni o domande</h1>
+              <h1 class="section-title">Iscriviti o chiedi informazioni</h1>
               <p class="section-text">
-                Questa è una versione demo: il form non invia ancora i dati, ma
-                qui trovi il testo di base da usare quando attiveremo il sistema
-                reale di contatto.
+                Compila questo modulo se vuoi entrare nel sistema TurnoLavoro
+                o se hai domande su formazione, ruoli interni o percorso
+                Business. Ti risponderemo appena possibile.
               </p>
             </div>
 
-            <div class="bullets">
-              <div class="bullet">
-                <div class="bullet-icon">1</div>
-                <div>
-                  Indicaci <strong>nome, cognome</strong> e la tua città / zona.
+            <div class="contact-grid">
+              <!-- Colonna testo -->
+              <div>
+                <div class="bullets">
+                  <div class="bullet">
+                    <div class="bullet-icon">1</div>
+                    <div>
+                      Indica <strong>nome, cognome</strong> e la tua
+                      <strong>città</strong>.
+                    </div>
+                  </div>
+                  <div class="bullet">
+                    <div class="bullet-icon">2</div>
+                    <div>
+                      Seleziona cosa ti interessa: formazione, ruoli interni
+                      o percorso Business.
+                    </div>
+                  </div>
+                  <div class="bullet">
+                    <div class="bullet-icon">3</div>
+                    <div>
+                      Spiega in poche righe la tua situazione: lavoro attuale,
+                      esperienza, obiettivi.
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="bullet">
-                <div class="bullet-icon">2</div>
-                <div>
-                  Spiega in poche righe la tua situazione lavorativa attuale e
-                  che tipo di percorso cerchi.
-                </div>
-              </div>
-              <div class="bullet">
-                <div class="bullet-icon">3</div>
-                <div>
-                  Specifica se sei interessato a
-                  <strong>Formazione</strong>, <strong>Ruoli interni</strong> o
-                  <strong>Percorso Business</strong>.
-                </div>
-              </div>
-            </div>
 
-            <div class="section" style="margin-top: 40px">
-              <div class="section-header">
-                <p class="section-kicker">EMAIL DI RIFERIMENTO</p>
-                <h2 class="section-title">Indirizzo contatto (esempio)</h2>
-                <p class="section-text">
-                  Quando il sistema sarà attivo, utilizzeremo un indirizzo
-                  dedicato, ad esempio:
-                  <strong>info@turnolavoro.com</strong>. Per ora questa pagina
-                  serve solo come anteprima del sito.
-                </p>
+              <!-- Colonna form -->
+              <div class="card">
+                <div class="card-label">Modulo di contatto</div>
+                <h2 class="card-title">Invia la tua richiesta</h2>
+
+                <form
+                  action="https://formsubmit.co/TUA_EMAIL"
+                  method="POST"
+                >
+                  <!-- Sostituisci TUA_EMAIL con la tua mail reale -->
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value="Nuova richiesta dal sito TurnoLavoro"
+                  />
+
+                  <div class="form-field">
+                    <label>Nome e cognome</label>
+                    <input
+                      type="text"
+                      name="nome"
+                      required
+                      placeholder="Il tuo nome completo"
+                    />
+                  </div>
+
+                  <div class="form-field">
+                    <label>Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="La tua email"
+                    />
+                  </div>
+
+                  <div class="form-field">
+                    <label>Città / Zona</label>
+                    <input
+                      type="text"
+                      name="citta"
+                      required
+                      placeholder="Es. Roma, Milano, Londra…"
+                    />
+                  </div>
+
+                  <div class="form-field">
+                    <label>Cosa ti interessa?</label>
+                    <select name="interesse" required>
+                      <option value="">Seleziona…</option>
+                      <option value="formazione">Formazione</option>
+                      <option value="lavoro">Ruoli interni</option>
+                      <option value="business">Percorso Business</option>
+                    </select>
+                  </div>
+
+                  <div class="form-field">
+                    <label>Messaggio</label>
+                    <textarea
+                      name="messaggio"
+                      rows="4"
+                      required
+                      placeholder="Raccontaci brevemente la tua situazione e cosa cerchi."
+                    ></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    Invia richiesta
+                  </button>
+                </form>
               </div>
             </div>
           </section>
