@@ -1,0 +1,55 @@
+/* Stile login */
+.login-container {
+    max-width: 350px;
+    margin: 70px auto;
+    padding: 25px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.login-container h1 {
+    color: #ffb347;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background: #ffb347;
+    border: none;
+    font-weight: 700;
+}
+
+.back-home {
+    display: block;
+    margin-top: 15px;
+    color: #ffb347;
+}
+
+/* Dashboard */
+.dashboard {
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 20px;
+}
+
+.dashboard h1 {
+    color: #ffb347;
+}
+
+.dash-menu li a {
+    color: white;
+    padding: 10px;
+    display: block;
+}
