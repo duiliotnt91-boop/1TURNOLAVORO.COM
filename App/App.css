@@ -1,55 +1,55 @@
-/* Stile login */
-.login-container {
-    max-width: 350px;
-    margin: 70px auto;
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    font-family: Arial, sans-serif;
+}
+
+.app-container {
+    max-width: 400px;
+    margin: 80px auto;
     padding: 25px;
-    background: rgba(0,0,0,0.4);
-    border-radius: 15px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 12px;
     text-align: center;
-}
-
-.login-container h1 {
-    color: #ffb347;
-}
-
-.login-container input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    background: #222;
-    border: 1px solid #444;
     color: white;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-.login-container button {
+.app-title {
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #f0a500;
+}
+
+.login-form input {
     width: 100%;
     padding: 12px;
-    background: #ffb347;
+    margin-bottom: 15px;
     border: none;
-    font-weight: 700;
+    border-radius: 8px;
+    font-size: 15px;
 }
 
-.back-home {
-    display: block;
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #f0a500;
+    color: black;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #ffb733;
+}
+
+.app-note {
     margin-top: 15px;
-    color: #ffb347;
-}
-
-/* Dashboard */
-.dashboard {
-    max-width: 650px;
-    margin: 50px auto;
-    padding: 20px;
-    background: rgba(0,0,0,0.3);
-    border-radius: 20px;
-}
-
-.dashboard h1 {
-    color: #ffb347;
-}
-
-.dash-menu li a {
-    color: white;
-    padding: 10px;
+    font-size: 12px;
+    opacity: 0.6;
+};
     display: block;
 }
