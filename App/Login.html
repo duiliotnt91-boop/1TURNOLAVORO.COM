@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login - TurnoLavoro</title>
-<link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="app.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - TurnoLavoro</title>
+    <link rel="stylesheet" href="App.css" />
 </head>
 <body>
 
-<div class="login-container">
-    <h1>Benvenuto</h1>
-    <p>Accedi al tuo spazio personale TurnoLavoro</p>
+<div class="app-container">
 
-    <form>
-        <label>Email</label>
-        <input type="email" required>
+    <h1 class="app-title">Accedi a TurnoLavoro</h1>
 
-        <label>Password</label>
-        <input type="password" required>
-
-        <button type="submit">Accedi</button>
+    <form class="login-form" action="../contact.html" method="POST">
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit" class="btn-primary">Entra</button>
     </form>
 
-    <a href="../index.html" class="back-home">← Torna alla Home</a>
+    <p class="app-note">Per ora l’accesso è simulato. La piattaforma completa verrà attivata più avanti.</p>
+
 </div>
 
-<script src="app.js"></script>
 </body>
 </html>
