@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TurnoLavoro</title>
+  <style>
+    :root{
+      --bg:#0f0f10;
+      --panel:#151517;
+      --panel2:#1c1c1f;
+      --text:#f3f3f3;
+      --muted:#c9c9c9;
+
+      --gold:#d6b15a;
+      --gold2:#b8923d;
+      --brown:#6a4a2f;
+      --line:#2a2a2e;
+
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 10% 0%, rgba(214,177,90,.12), transparent 55%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(106,74,47,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1120px; margin:0 auto; padding:18px 16px 60px}
+
+    /* Top bar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background: rgba(15,15,16,.75);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .topbar-inner{
+      max-width:1120px; margin:0 auto; padding:12px 16px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px}
+    .shield{
+      width:34px; height:34px; border-radius:10px;
+      background: linear-gradient(180deg, rgba(214,177,90,.95), rgba(106,74,47,.95));
+      display:grid; place-items:center;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.14);
+    }
+    .shield span{font-weight:900; color:#121212}
+    .nav{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+    .nav a{
+      padding:8px 10px; border-radius:10px; color:var(--muted);
+      border:1px solid transparent;
+    }
+    .nav a:hover{border-color:rgba(214,177,90,.25); color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius:12px; font-weight:700;
+      border:1px solid rgba(214,177,90,.35);
+      background: linear-gradient(180deg, rgba(214,177,90,.22), rgba(106,74,47,.10));
+      box-shadow: 0 12px 35px rgba(0,0,0,.30);
+    }
+    .btn:hover{border-color:rgba(214,177,90,.55)}
+    .btn-solid{
+      border-color:rgba(214,177,90,.55);
+      background: linear-gradient(180deg, rgba(214,177,90,.95), rgba(184,146,61,.95));
+      color:#141414;
+    }
+
+    /* Hero */
+    .hero{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      overflow:hidden;
+    }
+    .hero-left{padding:26px}
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:6px 10px; border-radius:999px;
+      border:1px solid rgba(214,177,90,.28);
+      background: rgba(214,177,90,.09);
+      color: var(--gold);
+      font-weight:800; font-size:12px;
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size:44px; line-height:1.05;
+      letter-spacing:-.8px;
+    }
+    @media (max-width: 520px){
+      h1{font-size:34px}
+    }
+    .lead{
+      color: var(--muted);
+      font-size:16px; line-height:1.55;
+      max-width: 52ch;
+    }
+    .cta-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    .subnote{margin-top:10px; color:rgba(255,255,255,.55); font-size:12px}
+
+    .hero-right{
+      display:grid;
+      grid-template-rows: 1fr auto;
+      gap:12px;
+    }
+
+    .mascot{
+      padding:18px;
+      display:flex;
+      gap:14px;
+      align-items:center;
+      background:
+        radial-gradient(400px 240px at 20% 20%, rgba(214,177,90,.20), transparent 60%),
+        radial-gradient(400px 260px at 80% 20%, rgba(106,74,47,.18), transparent 60%),
+        rgba(0,0,0,.18);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .mascot img{
+      width:86px; height:86px;
+      border-radius:18px;
+      border:1px solid rgba(214,177,90,.35);
+      background: rgba(255,255,255,.04);
+      object-fit:cover;
+    }
+    .mascot h3{margin:0 0 4px; font-size:18px}
+    .mascot p{margin:0; color:var(--muted); font-size:13px; line-height:1.35}
+
+    .tiles{
+      padding:14px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 520px){
+      .tiles{grid-template-columns:1fr}
+    }
+    .tile{
+      border-radius:16px;
+      padding:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(214,177,90,.10), rgba(255,255,255,.03));
+    }
+    .tile b{display:block; margin-bottom:6px}
+    .tile span{color:var(--muted); font-size:13px; line-height:1.35; display:block}
+    .tile .mini{margin-top:12px}
+    .mini .btn{width:100%}
+
+    /* Sections */
+    .grid3{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 900px){
+      .grid3{grid-template-columns:1fr}
+    }
+    .feature{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(0,0,0,.15));
+    }
+    .feature h4{margin:0 0 6px; font-size:16px}
+    .feature p{margin:0; color:var(--muted); font-size:14px; line-height:1.5}
+    .icon{
+      width:42px; height:42px; border-radius:14px;
+      background: rgba(214,177,90,.16);
+      border:1px solid rgba(214,177,90,.30);
+      display:grid; place-items:center;
+      margin-bottom:10px;
+      color: var(--gold);
+      font-weight:900;
+    }
+
+    .section{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:12px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .section{grid-template-columns:1fr}
+    }
+    .section .card{padding:20px}
+    .checks{margin:0; padding-left:18px; color:var(--muted); line-height:1.7}
+    .badge{
+      display:inline-block;
+      margin-top:10px;
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px dashed rgba(214,177,90,.35);
+      color:rgba(255,255,255,.75);
+      background: rgba(214,177,90,.08);
+      font-size:12px;
+    }
+
+    /* Footer */
+    .footer{
+      margin-top:22px;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:rgba(255,255,255,.55);
+      font-size:12px;
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:space-between;
+    }
+    .footer a{color:rgba(214,177,90,.85)}
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="shield" aria-hidden="true"><span>T</span></div>
+        <div>TurnoLavoro</div>
+      </div>
+
+      <div class="nav">
+        <a href="/come-funziona">Come funziona</a>
+        <a href="/corsi">Corsi</a>
+        <a href="/turni">Turni & Attività</a>
+        <a class="btn" href="/accedi">Accedi</a>
+        <a class="btn btn-solid" href="/iscriviti">Iscriviti</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <div class="hero">
+      <div class="card hero-left">
+        <div class="kicker">Dal sistema al lavoro • Turni, non promesse</div>
+        <h1>Costruiamo un percorso reale verso il lavoro.</h1>
+        <p class="lead">
+          TurnoLavoro organizza percorsi di formazione, attività e accesso a turni retribuiti.
+          Entri, impari, partecipi: cresci dentro un sistema che si muove davvero.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-solid" href="/iscriviti">Iscriviti ora</a>
+          <a class="btn" href="/come-funziona">Scopri come funziona</a>
+        </div>
+
+        <div class="subnote">
+          Trasparenza prima di tutto: nessuna promessa “facile”. Un percorso strutturato, con regole chiare.
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="card">
+          <div class="mascot">
+            <!-- Sostituisci src con l’immagine di TurniRaff che vuoi -->
+            <img src="https://via.placeholder.com/200x200.png?text=TurniRaff" alt="TurniRaff" />
+            <div>
+              <h3>TurniRaff</h3>
+              <p>La mascotte di Turno: ti guida nella piattaforma, nei corsi e nei primi step operativi.</p>
+            </div>
+          </div>
+
+          <div class="tiles">
+            <div class="tile">
+              <b>Accedi al sistema</b>
+              <span>Profilo, corsi introduttivi e regole. Inizia dal percorso giusto.</span>
+              <div class="mini"><a class="btn" href="/corsi">Vai ai corsi</a></div>
+            </div>
+            <div class="tile">
+              <b>Partecipa ai turni</b>
+              <span>Quando disponibili, scegli turni/attività in base al tuo profilo.</span>
+              <div class="mini"><a class="btn" href="/turni">Vedi turni</a></div>
+            </div>
+            <div class="tile" style="grid-column: 1 / -1;">
+              <b>Matura compensi in trasparenza</b>
+              <span>Storico attività e compensi maturati sempre visibili nel profilo.</span>
+              <div class="mini"><a class="btn" href="/come-funziona">Leggi la trasparenza</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding:16px;">
+          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+            <span style="color:var(--gold); font-weight:800;">Pilot Lazio:</span>
+            <span style="color:var(--muted);">partenza da Roma → espansione graduale.</span>
+            <a class="btn" style="margin-left:auto;" href="/iscriviti">Entra ora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <div class="feature">
+        <div class="icon">1</div>
+        <h4>Iscrizione</h4>
+        <p>Registrazione semplice, conferma email e accesso al tuo profilo.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">2</div>
+        <h4>Formazione</h4>
+        <p>Corsi introduttivi chiari: comportamento, regole, ruoli e percorso.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">3</div>
+        <h4>Attività & Turni</h4>
+        <p>Quando disponibili, scegli e candidati: crescita per merito e continuità.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="card">
+        <h3 style="margin:0 0 8px;">Perché “turni, non promesse”?</h3>
+        <ul class="checks">
+          <li>Non vendiamo sogni: costruiamo un percorso con regole e progressione.</li>
+          <li>Le opportunità dipendono da crescita, affidabilità e disponibilità reale dei turni.</li>
+          <li>Trasparenza: vedi sempre cosa hai fatto, cosa hai maturato, cosa puoi fare dopo.</li>
+        </ul>
+        <div class="badge">Nota: TurnoLavoro non garantisce un impiego immediato. Offre un sistema strutturato di accesso e crescita.</div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 10px;">Pronto a partire?</h3>
+        <p style="margin:0; color:var(--muted); line-height:1.55;">
+          Se sei stanco di mandare curriculum senza risposta, entra e inizia dal percorso.
+          La prima cosa che devi fare è completare i corsi introduttivi.
+        </p>
+        <div class="cta-row" style="margin-top:14px;">
+          <a class="btn btn-solid" href="/iscriviti">Iscriviti</a>
+          <a class="btn" href="/come-funziona">Spiegazione</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>© <span id="year"></span> TurnoLavoro • Colori: oro / marrone / grigio / nero</div>
+      <div>
+        <a href="/termini">Termini</a> · <a href="/privacy">Privacy</a> · <a href="/contatti">Contatti</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
